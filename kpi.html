@@ -1,0 +1,60 @@
+<html><head>
+    <title>Key Performance Indicators</title>
+    <script type="text/javascript" src="js/chapter/dom.js"></script>
+    <script type="text/javascript" src="js/FunctionalTools.js"></script>
+    <style type="text/css">
+      td, th {border: 1px solid black; padding: 3px;}
+      table {border-collapse: collapse;}
+    </style>
+  </head>
+  <body><h1>KPI Admin</h1>
+<!-- <p>Enter new KPI <em>alchemists' bottle</em> here:</p>*/ -->
+     <p>Enter new KPI here:</p>
+   <!-- <img src="img/florence_flask.png" alt="a fat bottle" id="picture"> -->
+   <form name="userinfo" method="get" action="info.html">
+ <!-- <p>Please give us your information, so that we can send
+  you spam.</p> -->
+  <p>KPI no: <input type="text" name="kpi"/></p>
+  <p>Description: <input type="text" name="desc"/></p>
+  <p>End date: <select type="date" name="date-e"> 
+     <!--       <option>Male</option>
+            <option>Female</option>
+            <option>Other</option> -->
+          </select></p>
+  <p><input name="send" type="submit" value="Send!"/></p>
+</form>
+<table>
+  <tbody>
+    <tr> <th>KPI no </th> <th> Description</th> </tr>
+    <tr> <td>1</td> <td>open post  </td> </tr>
+    <tr> <td>2</td> <td>classify post    </td> </tr>
+    <tr> <td>3</td> <td>check e-mail  </td> </tr>
+  </tbody>
+</table>
+</body></html>
+<!-- makeTable([{Tree: "Apple", Flowers: "White"},
+           {Tree: "Coral", Flowers: "Red"},
+           {Tree: "Pine",  Flowers: "None"}],
+          ["Tree", "Flowers"]);
+		  
+function makeTable(data, columns) {
+  var headRow = dom("TR");
+  forEach(columns, function(name) {
+    headRow.appendChild(dom("TH", null, name));
+  });
+
+  var body = dom("TBODY", null, headRow);
+  forEach(data, function(object) {
+    var row = dom("TR");
+    forEach(columns, function(name) {
+      row.appendChild(dom("TD", null, String(object[name])));
+    });
+    body.appendChild(row);
+  });
+
+  return dom("TABLE", null, body);
+}
+
+var table = makeTable(document.body.childNodes,
+                      ["nodeType", "tagName"]);
+document.body.appendChild(table);*//
